@@ -1,21 +1,23 @@
 Linear Regression from Scratch
 A simple, dependency-light script that fits a straight line to hours_studied vs. test_score data using gradient descent implemented from scratch, no scikit-learn, no black boxes. It's meant as a learning tool for understanding how linear regression actually works under the hood.
 
-Table of Contents
-What it does
-How it works
-Project structure
-Requirements
-Usage
-Example output
-Customizing
-What it does
+## Table of Contents
+- [What it does](#what-it-does)
+- [How it works](#how-it-works)
+- [Project structure](#project-structure)
+- [Requirements](#requirements)
+- [Usage](#usage)
+- [Example output](#example-output)
+- [Customizing](#customizing)
+
+## What it does
 Loads study data from ../Data/study_scores.csv
 Fits a line test_score = m * hours_studied + b by minimizing mean squared error (MSE) via gradient descent
 Trains for 1000 iterations, logging progress every 100 steps
 Saves three plots to visualize the process and result
 Uses the trained model to predict scores for a few example students
-How it works
+
+## How it works
 The goal is to find the straight line (test_score = m * hours_studied + b) that best fits the data. "Best" means the line that's closest, on average, to all the actual data points. There are two moving parts: m (the slope, how much score increases per hour studied) and b (the intercept, the predicted score at zero hours studied).
 
 Here's the intuition, step by step:
@@ -43,7 +45,8 @@ Gradient, the direction and rate at which the cost changes as you adjust a param
 Learning rate, a tuning knob controlling how big each adjustment step is. Too large and training can overshoot and become unstable; too small and training takes a long time to converge.
 Iteration, one full round of measuring the cost and adjusting m and b. This script runs 1000 of them.
 Convergence, the point where further training barely changes the cost anymore, meaning the model has settled on (close to) its best fit.
-Project structure
+
+## Project structure
 This script expects the following layout:
 
 your-repo/
@@ -53,11 +56,12 @@ your-repo/
     └── your_script_name.py   ← this script
 The CSV needs at least two columns: hours_studied and test_score.
 
-Requirements
+## Requirements
 Python 3.7+
 Dependencies:
 pip install numpy pandas matplotlib
-Usage
+
+## Usage
 From inside the script's folder:
 
 python your_script_name.py
@@ -66,7 +70,8 @@ The script will print the first few rows of the loaded data, then train the mode
 Iteration    0:  m = 0.412  b = 0.089  cost = 245.318
 Iteration  100:  m = 3.021  b = 1.774  cost = 42.105
 ...
-Example output
+
+## Example output
 Three PNG plots are saved to the folder you run the script from:
 
 File	Shows
@@ -81,7 +86,8 @@ Predictions for new students:
   A student who studied 2 hours is predicted to score 59.6
   A student who studied 5 hours is predicted to score 74.3
   A student who studied 8 hours is predicted to score 88.7
-Customizing
+
+## Customizing
 A few easy things to tweak at the top of the training loop:
 
 learning_rate, how big each gradient step is. Too high can cause the cost to diverge instead of decrease; too low makes training slow.
