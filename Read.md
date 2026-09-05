@@ -74,10 +74,11 @@ Iteration  100:  m = 3.021  b = 1.774  cost = 42.105
 ## Example output
 Three PNG plots are saved to the folder you run the script from:
 
-File	Shows
-plot_1_raw_data.png	Raw scatter plot of hours studied vs. test score, before any fitting
-plot_2_cost_over_time.png	Cost (MSE) decreasing across training iterations, should drop fast then flatten
-plot_3_fitted_line.png	Final fitted line drawn over the actual data points
+| File | Shows |
+|---|---|
+| plot_1_raw_data.png | Raw scatter plot of hours studied vs. test score, before any fitting |
+| plot_2_cost_over_time.png | Cost (MSE) decreasing across training iterations, should drop fast then flatten |
+| plot_3_fitted_line.png | Final fitted line drawn over the actual data points |
 The console also prints the final line equation and sample predictions, e.g.:
 
 Final line:  test_score = 4.812 * hours_studied + 50.203
